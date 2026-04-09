@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- Pasta base com um JSON por campus: chapeco.json, cerro_largo.json, … (ex.: assets/ local ou raw do scrape_boia). Respostas text/plain são interpretadas com JSON.parse. -->
+    <meta
+      name="cardapio-json-base"
+      content="https://raw.githubusercontent.com/gxovano/scrape_boia/main/assets/"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <title>cardapio-ru</title>
+    <script>
+      (function () {
+        var k = "cardapio-ru-theme";
+        var pref = "system";
+        try {
+          var s = localStorage.getItem(k);
+          if (s === "light" || s === "dark" || s === "system") pref = s;
+        } catch (e) {}
+        var dark =
+          pref === "dark" ? true : pref === "light" ? false : window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-CiR0Xxhs.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-C20NnINr.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
